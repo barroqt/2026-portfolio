@@ -46,6 +46,12 @@ export const Home = () => {
           <div className="text first" aria-label="Backend Engineer">
             {produceSpans("Backend Engineer")}
           </div>
+          <div className="text second" aria-label="Blockchain Specialist">
+            {produceSpans("Blockchain Specialist")}
+          </div>
+          <div className="text third" aria-label="Language Enthusiast">
+            {produceSpans("Language Enthusiast")}
+          </div>
         </Position>
         <SocialLinks>
           <a
@@ -76,10 +82,10 @@ export const Home = () => {
       </TextContainer>
       <AboutText>
         <p>
-          Hello! I am a committed lifelong learner: self-taught Rust and Solidity, I am currently exploring how to integrate LLMs effectively into engineering workflows.
+          Hello! I am a committed lifelong learner: self-taught Rust and Solidity, I am exploring how to integrate LLMs effectively into engineering workflows.
         </p>
         <p>
-          Outside of code, I host language meet-ups in Paris and work toward becoming a polyglot 
+          Outside of code, I host language meet-ups in Paris and work toward becoming a polyglot. 
         </p>
         <p>
           Currently open to new projects where I can contribute both skill and genuine interest.

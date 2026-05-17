@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { PageHeaderStyled } from "../../components/ui";
-import { sage, typeScale } from "../../utils";
+import { sage, typeScale, wheat } from "../../utils";
 
 export const HomeWrapper = styled.main`
   display: grid;
@@ -53,18 +53,62 @@ export const Name = styled.h1`
 `;
 
 const textRotate1 = keyframes`
-0%{
-  transform: translate3d(0, 0%, 0) rotateX(0deg)
-}
-40%{
-  transform: translate3d(0, 0%, 0) rotateX(0deg)
-}
-60%{
-  transform: translate3d(0, -100%, 0) rotateX(-90deg);
-}
-100%{
-  transform: translate3d(0, -100%, 0) rotateX(-90deg);
-}
+0% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+22% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+33% { transform: translate3d(0, -100%, 0) rotateX(-90deg) }
+88% { transform: translate3d(0, 100%, 0) rotateX(-90deg) }
+100% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+`;
+
+const textRotate2 = keyframes`
+0% { transform: translate3d(0, 100%, 0) rotateX(-90deg) }
+22% { transform: translate3d(0, 100%, 0) rotateX(-90deg) }
+33% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+55% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+66% { transform: translate3d(0, -100%, 0) rotateX(-90deg) }
+100% { transform: translate3d(0, 100%, 0) rotateX(-90deg) }
+`;
+
+const textRotate3 = keyframes`
+0% { transform: translate3d(0, 100%, 0) rotateX(-90deg) }
+55% { transform: translate3d(0, 100%, 0) rotateX(-90deg) }
+66% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+88% { transform: translate3d(0, 0%, 0) rotateX(0deg) }
+100% { transform: translate3d(0, -100%, 0) rotateX(-90deg) }
+`;
+
+const color1 = keyframes`
+0% { color: ${sage["50"]} }
+11% { color: ${sage["50"]} }
+22% { color: ${sage["50"]} }
+44% { color: ${wheat["50"]} }
+50% { color: ${wheat["50"]} }
+61% { color: ${wheat["50"]} }
+72% { color: ${wheat["50"]} }
+94% { color: ${sage["50"]} }
+100% { color: ${sage["50"]} }
+`;
+
+const color2 = keyframes`
+0% { color: ${wheat["50"]} }
+16.5% { color: ${wheat["50"]} }
+27.5% { color: ${wheat["50"]} }
+33% { color: ${wheat["50"]} }
+50% { color: ${wheat["50"]} }
+66.5% { color: ${sage["50"]} }
+77.5% { color: ${sage["50"]} }
+83% { color: ${sage["50"]} }
+100% { color: ${sage["50"]} }
+`;
+
+const color3 = keyframes`
+0% { color: ${sage["50"]} }
+33% { color: ${sage["50"]} }
+44% { color: ${sage["50"]} }
+50% { color: ${wheat["50"]} }
+83% { color: ${wheat["50"]} }
+94% { color: ${wheat["50"]} }
+100% { color: ${wheat["50"]} }
 `;
 
 export const Position = styled(PageHeaderStyled)`
@@ -80,12 +124,35 @@ export const Position = styled(PageHeaderStyled)`
   color: ${sage["50"]};
   cursor: default;
   .text {
+    white-space: nowrap;
     span {
       display: inline-block;
       will-change: transform;
       transform-style: preserve-3d;
       transform-origin: bottom;
-      animation: ${textRotate1} 2.4s infinite alternate;
+    }
+    &.first span {
+      animation: ${textRotate1} 8s infinite, ${color1} 16s infinite;
+    }
+    &.second {
+      position: absolute;
+      top: 2%;
+      left: 0;
+      span {
+        transform-origin: bottom;
+        transform: translate3d(0, 100%, 0) rotateX(-90deg);
+        animation: ${textRotate2} 8s infinite, ${color2} 16s infinite;
+      }
+    }
+    &.third {
+      position: absolute;
+      top: 2%;
+      left: 0;
+      span {
+        transform-origin: bottom;
+        transform: translate3d(0, 100%, 0) rotateX(-90deg);
+        animation: ${textRotate3} 8s infinite, ${color3} 16s infinite;
+      }
     }
   }
   @media screen and (max-width: 1204px) {
@@ -97,11 +164,16 @@ export const Position = styled(PageHeaderStyled)`
     display: flex;
     justify-content: center;
     align-items: center;
+    .text {
+      &.second,
+      &.third {
+        left: auto;
+      }
+    }
   }
 `;
 
 export const AnimatedSpan = styled.span`
-  transition: 0.5s;
   animation-delay: ${(props) => props.index * 0.05}s !important;
   padding: ${(props) => (props.letter === " " ? "0.325rem" : null)};
 `;
