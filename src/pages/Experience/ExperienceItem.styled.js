@@ -67,6 +67,10 @@ export const StyledExperienceItem = styled.div`
       font-size: ${typeScale.title};
       line-height: 2.4rem;
     }
+    h2.long-name {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
     .position {
       display: none;
     }

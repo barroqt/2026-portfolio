@@ -5,7 +5,10 @@ import { StyledExperienceItem } from "./ExperienceItem.styled";
 export const ExperienceItem = (props) => {
   const { data } = props;
   return (
-    <StyledExperienceItem className="experience-item" color={data.color}>
+    <StyledExperienceItem
+      className="experience-item"
+      color={data.color}
+    >
       <div className="header">
         <div className="image">
           <div className="wrapper">
@@ -13,7 +16,7 @@ export const ExperienceItem = (props) => {
           </div>
         </div>
         <div className="text">
-          <h2>{data.name}</h2>
+          <h2 className={data.id === "mediarithmics" ? "long-name" : ""}>{data.name}</h2>
           <h3 className="position">{data.title}</h3>
         </div>
       </div>

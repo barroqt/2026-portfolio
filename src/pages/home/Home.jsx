@@ -69,15 +69,13 @@ export const Home = () => {
       </TextContainer>
       <AboutText>
         <p>
-          Backend software engineer with production experience in APIs, indexing
-          pipelines, and blockchain integrations. Focused on business
-          applications for supply chain & energy, plus payments, settlements,
-          and real-world asset tokenization.
+          Hello! I am a committed lifelong learner: self-taught Rust and Solidity, I am currently exploring how to integrate LLMs effectively into engineering workflows.
         </p>
         <p>
-          Host of international meet-ups in Paris and Seoul, with experience
-          across fintech, insurtech, and digital asset platforms. Fluent in
-          French, English, Mandarin Chinese, Korean, Portuguese, and Spanish.
+          Outside of code, I host language meet-ups in Paris and work toward becoming a polyglot 
+        </p>
+        <p>
+          Currently open to new projects where I can contribute both skill and genuine interest.
         </p>
       </AboutText>
     </HomeWrapper>
