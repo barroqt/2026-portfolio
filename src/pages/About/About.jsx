@@ -1,14 +1,16 @@
-import React from "react";
+import gsap from "gsap";
+import Flip from "gsap/Flip";
+import React, { useEffect } from "react";
 import { Page } from "../../components/Page";
 import { stone } from "../../utils";
 import {
-  Certifications,
-  Education,
+  Educations,
   Paragraph,
   SkillTag,
   SkillsList,
   Text,
 } from "./About.styled";
+import { AboutItem } from "./AboutItem";
 
 export const About = () => {
   const skills = [
@@ -20,37 +22,63 @@ export const About = () => {
     "OpenCode", "Agentic Coding",
   ];
 
-  const certifications = [
-    "Alyra RS5000 Certification: Blockchain Developer (2023)",
+  const educationData = [
+    {
+      initials: "TU",
+      title: "Tongji University, Shanghai",
+      p: "Master in Software Engineering — 2017",
+    },
+    {
+      initials: "EP",
+      title: "EPITECH — European Institute of Technology",
+      p: "Master of Information Technology — Paris, France — 2017",
+    },
+    {
+      initials: "AL",
+      title: "Alyra",
+      p: "RS5000 Certification: Blockchain Developer — 2023",
+    },
   ];
+
+  useEffect(() => {
+    gsap.registerPlugin(Flip);
+    let cards = document.querySelectorAll(".about-item");
+    cards.forEach((card, i) => {
+      if (i === 0) {
+        card.classList.add("active");
+      }
+      card.addEventListener("mouseenter", (e) => {
+        if (card.classList.contains("active")) {
+          return;
+        }
+        const state = Flip.getState(cards);
+        cards.forEach((c) => {
+          c.classList.remove("active");
+        });
+        card.classList.add("active");
+        Flip.from(state, {
+          duration: 0.5,
+          ease: "elastic.out(1,0.9)",
+          absolute: true,
+        });
+      });
+    });
+  }, []);
 
   return (
     <Page header="About">
       <Text>
-        <Education>
-          <h3>Education</h3>
-          <div className="item">
-            <strong>Master in Software Engineering</strong>
-            <span>Tongji University — Shanghai, China — 2017</span>
-          </div>
-          <div className="item">
-            <strong>Master of Information Technology</strong>
-            <span>EPITECH — European Institute of Technology — Paris, France — 2017</span>
-          </div>
-        </Education>
-        <Certifications>
-          <h3>Certifications</h3>
-          {certifications.map((cert, i) => (
-            <div key={i} className="item">{cert}</div>
+        <h3 className="section-title">Education</h3>
+        <Educations>
+          {educationData.map((edu, i) => (
+            <AboutItem
+              key={i}
+              color={stone}
+              active={i === 0}
+              data={edu}
+            />
           ))}
-        </Certifications>
-        <Paragraph>
-          Backend software engineer with production experience in APIs, indexing
-          pipelines, and blockchain integrations. Focused on business
-          applications for supply chain & energy, plus payments, settlements,
-          and real-world asset tokenization. Fluent in French, English, Mandarin
-          Chinese, Korean, Portuguese, and Spanish.
-        </Paragraph>
+        </Educations>
       </Text>
       <SkillsList>
         {skills.map((skill, i) => (

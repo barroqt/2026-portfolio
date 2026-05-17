@@ -36,6 +36,33 @@ export const StyledExperienceItem = styled.div`
     transform: translateX(40px);
     transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
 
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .wrapper {
+        box-shadow: 0.2rem 0.2rem 0
+          ${(props) => (props.color ? props.color["00"] : mist["00"])};
+        border: 2px solid
+          ${(props) => (props.color ? props.color["00"] : mist["00"])};
+        width: 5.6rem;
+        height: 5.6rem;
+        border-radius: 50%;
+        overflow: hidden;
+        rotate: -90deg;
+        background-color: ${(props) =>
+          props.color ? props.color["00"] : mist["00"]};
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
     h2 {
       font-size: ${typeScale.title};
       line-height: 2.4rem;
@@ -49,6 +76,11 @@ export const StyledExperienceItem = styled.div`
     font-size: ${typeScale.text};
   }
 
+  a {
+    display: none;
+    text-decoration: none;
+  }
+
   &.active {
     width: 600px;
     .date {
@@ -57,12 +89,20 @@ export const StyledExperienceItem = styled.div`
     p {
       display: block;
     }
+    a {
+      display: inline-block;
+    }
 
     .header {
       justify-content: start;
       align-items: center;
       rotate: 0deg;
       transform: translateX(0%);
+      .image {
+        .wrapper {
+          rotate: 0deg;
+        }
+      }
       .text {
         .position {
           display: block;
@@ -83,6 +123,12 @@ export const StyledExperienceItem = styled.div`
         font-size: ${typeScale.paragraph};
         line-height: 1.5rem;
       }
+      .image {
+        .wrapper {
+          width: 4.8rem;
+          height: 4.8rem;
+        }
+      }
     }
     .data {
       font-size: ${typeScale.helperText};
@@ -102,9 +148,22 @@ export const StyledExperienceItem = styled.div`
       display: none;
     }
 
+    .header,
+    .image,
+    .wrapper {
+      height: 100%;
+      width: 100%;
+    }
     .header {
       transform: translateX(0);
       rotate: 0deg;
+      .image {
+        .wrapper {
+          width: 4rem;
+          height: 4rem;
+          rotate: 0deg;
+        }
+      }
     }
 
     &.active {
@@ -113,6 +172,11 @@ export const StyledExperienceItem = styled.div`
       grid-row: 1;
       .text {
         display: block;
+      }
+      .header,
+      .image,
+      .wrapper {
+        width: auto;
       }
     }
   }

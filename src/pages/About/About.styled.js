@@ -15,54 +15,22 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const Education = styled.div`
-  margin-bottom: 1.5rem;
-  h3 {
-    font-size: ${typeScale.subtitle};
-    margin-bottom: 0.75rem;
-    color: ${stone["00"]};
-  }
-  .item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-bottom: 0.75rem;
-    strong {
-      font-size: ${typeScale.paragraph};
-      color: ${stone["10"]};
-    }
-    span {
-      font-size: ${typeScale.helperText};
-      color: ${stone["30"]};
-    }
-  }
-`;
-
-export const Certifications = styled.div`
-  margin-bottom: 1.5rem;
-  h3 {
-    font-size: ${typeScale.subtitle};
-    margin-bottom: 0.75rem;
-    color: ${stone["00"]};
-  }
-  .item {
-    font-size: ${typeScale.paragraph};
-    color: ${stone["10"]};
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    position: relative;
-    &::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: ${stone["50"]};
-    }
-  }
+export const Educations = styled.section`
+  display: flex;
+  gap: 0.75rem;
+  align-self: start;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 `;
 
 export const Text = styled.aside`
   grid-column: 2/7;
   width: 100%;
+  .section-title {
+    font-size: ${typeScale.subtitle};
+    color: ${stone["00"]};
+    margin-bottom: 0.5rem;
+  }
   @media screen and (max-width: 720px) {
     grid-column: 1 / 7;
     padding-inline: 1rem;
