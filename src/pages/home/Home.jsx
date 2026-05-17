@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiOutlineFilePdf, AiOutlineMail } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
 import { NavbarContext } from "../../context";
 import { sage } from "../../utils";
@@ -56,14 +56,21 @@ export const Home = () => {
             <AiFillLinkedin size={28} color={sage["50"]} />
           </a>
           <a
-            href="https://github.com/barrogt"
+            href="https://github.com/barroqt"
             target="_blank"
             rel="noopener noreferrer"
           >
             <AiFillGithub size={28} color={sage["50"]} />
           </a>
-          <a href="mailto:barrogt@gmail.com">
+          <a href="mailto:barroqt@gmail.com">
             <AiOutlineMail size={28} color={sage["50"]} />
+          </a>
+          <a
+            href="/thomas-barroqueiro-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiOutlineFilePdf size={28} color={sage["50"]} />
           </a>
         </SocialLinks>
       </TextContainer>
