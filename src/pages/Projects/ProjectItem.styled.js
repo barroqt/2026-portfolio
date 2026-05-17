@@ -40,6 +40,33 @@ export const StyledProjectItem = styled.div`
     transform: translateX(40px);
     transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
 
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .wrapper {
+        box-shadow: 0.2rem 0.2rem 0
+          ${(props) => (props.color ? props.color["00"] : wheat["00"])};
+        border: 2px solid
+          ${(props) => (props.color ? props.color["00"] : wheat["00"])};
+        width: 5.6rem;
+        height: 5.6rem;
+        border-radius: 50%;
+        overflow: hidden;
+        rotate: -90deg;
+        background-color: ${(props) =>
+          props.color ? props.color["00"] : wheat["00"]};
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
     h2 {
       font-size: ${typeScale.title};
       line-height: 2.4rem;
@@ -53,6 +80,11 @@ export const StyledProjectItem = styled.div`
     font-size: ${typeScale.text};
   }
 
+  .buttons {
+    display: none;
+    gap: 1rem;
+  }
+
   &.active {
     width: 600px;
     .tech {
@@ -61,8 +93,9 @@ export const StyledProjectItem = styled.div`
     p {
       display: block;
     }
-    .project-link {
-      display: inline-block;
+    .buttons {
+      display: flex;
+      gap: 1rem;
     }
 
     .header {
@@ -70,6 +103,11 @@ export const StyledProjectItem = styled.div`
       align-items: center;
       rotate: 0deg;
       transform: translateX(0%);
+      .image {
+        .wrapper {
+          rotate: 0deg;
+        }
+      }
       .text {
         .type-badge {
           display: block;
