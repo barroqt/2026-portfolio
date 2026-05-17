@@ -49,6 +49,18 @@ export const SkillsList = styled.aside`
   }
 `;
 
+export const LanguagesLabel = styled.div`
+  grid-column: 7/ 13;
+  font-size: ${typeScale.paragraph};
+  color: ${stone["00"]};
+  font-weight: bold;
+  padding: 1rem 1rem 0;
+  @media screen and (max-width: 720px) {
+    grid-column: 1 / 7;
+    padding-inline: 1rem;
+  }
+`;
+
 export const SkillTag = styled.span`
   background-color: ${(props) => (props.color ? props.color["50"] : stone["50"])};
   color: ${(props) => (props.color ? props.color["00"] : stone["00"])};

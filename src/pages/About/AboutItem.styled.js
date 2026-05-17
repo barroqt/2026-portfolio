@@ -28,13 +28,15 @@ export const AboutItemWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: ${typeScale.text};
     background-color: ${(props) =>
       props.color ? props.color["00"] : stone["00"]};
-    color: ${(props) =>
-      props.color ? props.color["60"] : stone["60"]};
+    overflow: hidden;
     margin: 0.75rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .text {
     display: none;
@@ -65,7 +67,6 @@ export const AboutItemWrapper = styled.div`
       min-width: 45px;
       width: 45px;
       height: 45px;
-      font-size: ${typeScale.paragraph};
     }
     &.active {
       width: 300px;

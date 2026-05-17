@@ -5,6 +5,7 @@ import { Page } from "../../components/Page";
 import { stone } from "../../utils";
 import {
   Educations,
+  LanguagesLabel,
   Paragraph,
   SkillTag,
   SkillsList,
@@ -14,29 +15,29 @@ import { AboutItem } from "./AboutItem";
 
 export const About = () => {
   const skills = [
-    "Rust", "Go", "Node.js", "TypeScript", "JavaScript",
-    "NestJS", "Express", "REST", "GraphQL",
-    "AWS (SQS, S3, EC2, API Gateway)", "Docker", "Serverless", "PM2", "Sentry",
-    "SQL", "PostgreSQL", "MySQL", "MongoDB", "DynamoDB", "Redis", "Meilisearch", "Prisma",
-    "Ethereum", "Solana", "EVM", "Solidity", "Foundry", "Hardhat", "Hyperledger", "IPFS",
-    "OpenCode", "Agentic Coding",
+    "French",
+    "English",
+    "Mandarin",
+    "Korean",
+    "Portuguese",
+    "Spanish",
   ];
 
   const educationData = [
     {
-      initials: "TU",
+      logo: "/tongji.jpg",
       title: "Tongji University, Shanghai",
-      p: "Master in Software Engineering — 2017",
+      p: "Master in Software Engineering",
     },
     {
-      initials: "EP",
+      logo: "/epitech.png",
       title: "EPITECH — European Institute of Technology",
-      p: "Master of Information Technology — Paris, France — 2017",
+      p: "Master of Information Technology — Paris, France",
     },
     {
-      initials: "AL",
+      logo: "/alyra.png",
       title: "Alyra",
-      p: "RS5000 Certification: Blockchain Developer — 2023",
+      p: "RS5000 Certification: Blockchain Developer",
     },
   ];
 
@@ -68,7 +69,6 @@ export const About = () => {
   return (
     <Page header="About">
       <Text>
-        <h3 className="section-title">Education</h3>
         <Educations>
           {educationData.map((edu, i) => (
             <AboutItem

@@ -4,7 +4,9 @@ import { AboutItemWrapper } from "./AboutItem.styled";
 export const AboutItem = ({ color, active, data }) => {
   return (
     <AboutItemWrapper color={color} active={active} className="about-item">
-      <div className="logo">{data.initials}</div>
+      <div className="logo">
+        <img src={data.logo} alt={data.title} />
+      </div>
       <div className="text">
         <h3>{data.title}</h3>
         <p>{data.p}</p>
