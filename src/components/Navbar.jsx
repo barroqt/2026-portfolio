@@ -73,18 +73,18 @@ export const Navbar = ({ children }) => {
             <NavbarItem
               className="navbar-item"
               onClick={handelDotMovement}
-              id="projects"
+              id="experience"
             >
-              Projects
+              Experience
             </NavbarItem>
           </li>
           <li>
             <NavbarItem
               className="navbar-item"
               onClick={handelDotMovement}
-              id="experience"
+              id="projects"
             >
-              Experience
+              Projects
             </NavbarItem>
           </li>
           <li>

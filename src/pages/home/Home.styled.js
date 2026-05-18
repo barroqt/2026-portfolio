@@ -77,40 +77,6 @@ const textRotate3 = keyframes`
 100% { transform: translate3d(0, -100%, 0) rotateX(-90deg) }
 `;
 
-const color1 = keyframes`
-0% { color: ${sage["50"]} }
-11% { color: ${sage["50"]} }
-22% { color: ${sage["50"]} }
-44% { color: ${wheat["50"]} }
-50% { color: ${wheat["50"]} }
-61% { color: ${wheat["50"]} }
-72% { color: ${wheat["50"]} }
-94% { color: ${sage["50"]} }
-100% { color: ${sage["50"]} }
-`;
-
-const color2 = keyframes`
-0% { color: ${wheat["50"]} }
-16.5% { color: ${wheat["50"]} }
-27.5% { color: ${wheat["50"]} }
-33% { color: ${wheat["50"]} }
-50% { color: ${wheat["50"]} }
-66.5% { color: ${sage["50"]} }
-77.5% { color: ${sage["50"]} }
-83% { color: ${sage["50"]} }
-100% { color: ${sage["50"]} }
-`;
-
-const color3 = keyframes`
-0% { color: ${sage["50"]} }
-33% { color: ${sage["50"]} }
-44% { color: ${sage["50"]} }
-50% { color: ${wheat["50"]} }
-83% { color: ${wheat["50"]} }
-94% { color: ${wheat["50"]} }
-100% { color: ${wheat["50"]} }
-`;
-
 export const Position = styled(PageHeaderStyled)`
   background: unset;
   line-height: unset;
@@ -132,7 +98,7 @@ export const Position = styled(PageHeaderStyled)`
       transform-origin: bottom;
     }
     &.first span {
-      animation: ${textRotate1} 8s infinite, ${color1} 16s infinite;
+      animation: ${textRotate1} 8s infinite;
     }
     &.second {
       position: absolute;
@@ -141,7 +107,7 @@ export const Position = styled(PageHeaderStyled)`
       span {
         transform-origin: bottom;
         transform: translate3d(0, 100%, 0) rotateX(-90deg);
-        animation: ${textRotate2} 8s infinite, ${color2} 16s infinite;
+        animation: ${textRotate2} 8s infinite;
       }
     }
     &.third {
@@ -151,7 +117,7 @@ export const Position = styled(PageHeaderStyled)`
       span {
         transform-origin: bottom;
         transform: translate3d(0, 100%, 0) rotateX(-90deg);
-        animation: ${textRotate3} 8s infinite, ${color3} 16s infinite;
+        animation: ${textRotate3} 8s infinite;
       }
     }
   }
