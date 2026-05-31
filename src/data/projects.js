@@ -4,6 +4,16 @@ import { wheat } from "../utils";
 // { id, title, description, technologies, link, type: "professional" | "personal" }
 export const projects = [
   {
+    id: "kaeda",
+    title: "Kaeda",
+    description:
+      "Korean vocabulary mining TUI that parses .srt subtitle files, tokenizes text, looks up definitions, and builds an SRS deck, all from the terminal.",
+    technologies: ["Rust"],
+    image: "/kaeda.png",
+    github: "https://github.com/barroqt/Kaeda",
+    type: "personal",
+  },
+  {
     id: "semaphore",
     title: "Semaphore",
     description:
