@@ -7,7 +7,7 @@ export const projects = [
     id: "kaeda",
     title: "Kaeda",
     description:
-      "Korean vocabulary mining TUI that parses .srt subtitle files, tokenizes text, looks up definitions, and builds an SRS deck, all from the terminal.",
+      "Desktop app and TUI to mine medias into flashcards for language learners.",
     technologies: ["Rust"],
     image: "/kaeda.png",
     github: "https://github.com/barroqt/Kaeda",
@@ -17,7 +17,7 @@ export const projects = [
     id: "semaphore",
     title: "Semaphore",
     description:
-      "Oracle that aggregates narrative and sentiment. Signals from X, Reddit, Google, and Telegram are made via ai agents paying with 402 http status. 2nd place at ETH Prague 2026.",
+      "Oracle that aggregates narrative and sentiment from X, Reddit, Google, and Telegram. Can be used with ai agents and x402 payments. 2nd place at ETH Prague 2026.",
     technologies: ["Solidity", "x402", "IPFS", "Chainlink"],
     image: "/semaphore.png",
     github: "https://github.com/barroqt/semaphore",
