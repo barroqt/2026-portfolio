@@ -38,7 +38,7 @@ export const projects = [
     id: "catapult-dao",
     title: "Catapult DAO",
     description:
-      "DAO framework for decentralized governance and proposal management on Ethereum. Prize winner at Avalanche Barcelona.",
+      "DAO framework for decentralized governance and proposal management. Prize winner at Avalanche Barcelona.",
     technologies: ["Solidity", "Ethers.js", "React", "Hardhat"],
     image: "/catapultdao.png",
     github: "https://github.com/barroqt/catapult-dao",
