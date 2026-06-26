@@ -1,7 +1,7 @@
 import { wheat } from "../utils";
 
 // Add new project entries here following the same structure:
-// { id, title, description, technologies, link, type: "professional" | "personal" }
+// { id, title, description, technologies, link, type: "professional" | "personal" | "community" }
 export const projects = [
   {
     id: "kaeda",

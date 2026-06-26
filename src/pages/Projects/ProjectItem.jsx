@@ -18,7 +18,7 @@ export const ProjectItem = (props) => {
         <div className="text">
           <h2>{data.title}</h2>
           <h3 className="type-badge">
-            {data.type === "professional" ? "💼 Professional" : "🛠️ Personal"}
+            {data.type === "professional" ? "💼 Professional" : data.type === "community" ? "🤝 Community" : "🛠️ Personal"}
           </h3>
         </div>
       </div>
