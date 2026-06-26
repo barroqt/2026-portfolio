@@ -21,7 +21,7 @@ export const projects = [
     technologies: ["Solidity", "x402", "IPFS", "Chainlink"],
     image: "/semaphore.png",
     github: "https://github.com/barroqt/semaphore",
-    type: "personal",
+    type: "professional",
   },
   {
     id: "game-of-life",
@@ -35,6 +35,17 @@ export const projects = [
     type: "personal",
   },
   {
+    id: "scribe",
+    title: "Scribe",
+    description:
+      "Web application to get your own analysis and stats about the board game 7 wonders.",
+    technologies: ["NextJS", "Bun", "Turso"],
+    image: "/scribe.jpg",
+    link: "https://scribe-7wonders.vercel.app",
+    github: "https://github.com/barroqt/scribe",
+    type: "personal",
+  },
+  {
     id: "catapult-dao",
     title: "Catapult DAO",
     description:
@@ -42,7 +53,7 @@ export const projects = [
     technologies: ["Solidity", "Ethers.js", "React", "Hardhat"],
     image: "/catapultdao.png",
     github: "https://github.com/barroqt/catapult-dao",
-    type: "personal",
+    type: "professional",
   },
   {
     id: "gengoffee",
@@ -53,6 +64,6 @@ export const projects = [
     link: "https://gengoffee.com/",
     meetup: "https://www.meetup.com/the-english-gengoffee-apero-franco-english/",
     instagram: "https://www.instagram.com/gengoffee/",
-    type: "personal",
+    type: "community",
   },
 ];
